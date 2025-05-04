@@ -1,0 +1,56 @@
+/* Patient Delete Page Styles */
+.delete-appt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #FFDEE9, #FFDEE9); /* Soft pastel pink gradient */
+    color: #333;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #444;
+}
+
+select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ff85b8;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+select:focus {
+    border-color: #eb779c;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #ff85b8; /* Same color as in EditAppt */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #eb779c; /* Same hover color as in EditAppt */
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}

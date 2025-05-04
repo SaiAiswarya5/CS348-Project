@@ -1,0 +1,38 @@
+/* Welcome Page Styles */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #FFDEE9, #FFDEE9); /* Soft pastel gradient */
+    color: #333;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #ff85b8;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #eb779c;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}

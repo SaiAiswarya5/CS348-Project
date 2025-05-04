@@ -1,0 +1,79 @@
+/* Overall Page Styling */
+.prescribe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Reduce gap between boxes */
+    padding: 30px; /* Adjust padding */
+    height: 100vh;
+    background: linear-gradient(135deg, #FFDEE9, #FFDEE9);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Box Styling */
+.box {
+    width: 400px; /* Slightly smaller */
+    max-height: 450px; /* Limit height */
+    padding: 20px; /* Reduce padding */
+    border-radius: 12px; /* Slightly less rounded */
+    background: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduce spacing */
+    overflow-y: auto; /* Add scrolling if needed */
+}
+
+/* Headings */
+h2 {
+    font-size: 1.75rem; /* Reduce size */
+    text-align: center;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Labels */
+label {
+    font-size: 0.9rem; /* Slightly smaller */
+    font-weight: bold;
+    color: #444;
+}
+
+/* Input Fields & Select */
+select, input {
+    width: 100%;
+    padding: 8px; /* Reduce padding */
+    font-size: 0.85rem; /* Smaller text */
+    border: 2px solid #ff85b8;
+    border-radius: 6px; /* Slightly smaller rounded edges */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input:focus {
+    border-color: #eb779c;
+}
+
+/* Button Styling */
+button {
+    padding: 10px; /* Reduce padding */
+    font-size: 0.9rem; /* Reduce font size */
+    border: none;
+    border-radius: 20px; /* Keep rounded but smaller */
+    cursor: pointer;
+    background-color: #ff85b8;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #eb779c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
