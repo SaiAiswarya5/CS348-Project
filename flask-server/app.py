@@ -385,14 +385,8 @@ def get_finished_appointments(patient_id):
     start_time = request.args.get('start_time')
     end_time = request.args.get('end_time')
 
-
-
-
     # Start with all finished appointments for the patient
     query = Appointment.query.filter_by(patient_id=patient_id, finished=True)
-
-
-
 
     # Apply filters only if they're present
     if doctor:
@@ -408,13 +402,7 @@ def get_finished_appointments(patient_id):
     if end_time:
         query = query.filter(Appointment.time <= end_time)
 
-
-
-
     appointments = query.all()
-
-
-
 
     appointment_list = []
     for appt in appointments:
@@ -428,9 +416,6 @@ def get_finished_appointments(patient_id):
             for p in appt.prescriptions
         ]
 
-
-
-
         appointment_list.append({
             "appointment_id": appt.appointment_id,
             "physician_id": appt.physician_id,
@@ -442,9 +427,6 @@ def get_finished_appointments(patient_id):
             "treatment": appt.treatment,
             "prescriptions": prescriptions
         })
-
-
-
 
     return jsonify(appointment_list)
 
@@ -460,22 +442,17 @@ def get_finished_appointments_by_doctor(doctor_id):
     start_time = request.args.get("start_time")
     end_time = request.args.get("end_time")
 
-
     query = Appointment.query.filter_by(physician_id=doctor_id, finished=True)
-
 
     # Flag to track if we need to join Patient table
     joined_patient = False
 
-
     if patient_id:
         query = query.filter(Appointment.patient_id == patient_id)
-
 
     if age_range or blood_type:  # Only join if we are filtering by age or blood type
         query = query.join(Patient)
         joined_patient = True
-
 
     if age_range:
         if age_range == "0-18":
@@ -490,10 +467,8 @@ def get_finished_appointments_by_doctor(doctor_id):
             age_min, age_max = 0, 200  # fallback if invalid input
         query = query.filter(Patient.age >= age_min, Patient.age <= age_max)
 
-
     if blood_type:
         query = query.filter(Patient.blood_type == blood_type)
-
 
     if start_date:
         query = query.filter(Appointment.date >= start_date)
@@ -503,7 +478,6 @@ def get_finished_appointments_by_doctor(doctor_id):
         query = query.filter(Appointment.time >= start_time)
     if end_time:
         query = query.filter(Appointment.time <= end_time)
-
 
     appointments = query.all()
     result = []
@@ -527,7 +501,6 @@ def get_finished_appointments_by_doctor(doctor_id):
                 for presc in appt.prescriptions
             ]
         })
-
 
     return jsonify(result)
 
